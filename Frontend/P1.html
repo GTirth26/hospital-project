@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header
+        {
+            background-color: aqua;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            height: 300px; 
+            width: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .image-container1 {
+            text-align: left;
+        }
+        .image-container1 img {
+            height: 300px; 
+            width: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .slider-container {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        /* Image slider */
+        .slider img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .slider img.active {
+            display: block;
+        }
+
+        /* Dots container */
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        /* Dots styling */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active {
+            background-color: ghostwhite;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="slider-container">
+        <div class="slider">
+            <img src="D:\PROJECT\H1.jpg" class="active" alt="spider-man.jpgN">
+            <img src="D:\PROJECT\H2.webp" alt="yn">
+            <img src="D:\PROJECT\H3.jpg" alt="yn3">
+            
+        </div>
+        <div class="dots"></div> <!-- Dots will be generated dynamically here -->
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll(".slider img");
+        const dotsContainer = document.querySelector(".dots");
+
+        // Create dots dynamically
+        images.forEach((_, index) => {
+            let dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.setAttribute("onclick", `currentSlide(${index})`);
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        function changeSlide(index) {
+            images[currentIndex].classList.remove("active");
+            dots[currentIndex].classList.remove("active");
+
+            currentIndex = index;
+
+            images[currentIndex].classList.add("active");
+            dots[currentIndex].classList.add("active");
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentIndex + 1) % images.length;
+            changeSlide(nextIndex);
+        }
+
+        function currentSlide(index) {
+            changeSlide(index);
+        }
+
+        // Auto change slides every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
+    <div class="header"> 
+        <h1>Doctor web site </h1>
+    </div>
+</body>
+</html>

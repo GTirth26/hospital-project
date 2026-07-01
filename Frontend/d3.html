@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influenza (Flu) - Professional Care & Prevention</title>
+    <style>
+        :root {
+            --primary: #007bff; /* Medical Blue */
+            --secondary: #2c3e50;
+            --bg-light: #f4f9ff;
+            --text-dark: #334155;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Professional Back Button */
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .btn-back:hover {
+            background: #000;
+            transform: translateX(-5px);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--secondary);
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        /* Image Styling */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Content Sections */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.05);
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Doctor Section */
+        .doctor-card {
+            background: #f0f7ff;
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 60px;
+            border: 1px solid #d0e7ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .doctor-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .doctor-card h3 {
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+            color: #004085;
+        }
+
+        .doctor-card ul li::before {
+            content: "🔹";
+            color: var(--primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 20px; margin: 20px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .image-container img { height: 250px; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="final project1.html" class="btn-back">← Back to Home</a>
+
+        <h2>Influenza (Flu) Care</h2>
+        
+        <p>Influenza (flu) is a contagious respiratory illness caused by influenza viruses. It can range from mild to severe, and annual vaccination remains the most effective prevention strategy.</p>
+
+        <div class="image-container">
+            <img src="flue.jpg" alt="Flu Virus Microscopic View">
+        </div>
+
+        
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Common Symptoms</h3>
+                <ul>
+                    <li>High fever (above 100.4°F)</li>
+                    <li>Severe muscle & body aches</li>
+                    <li>Persistent dry cough</li>
+                    <li>Extreme fatigue & weakness</li>
+                    <li>Nasal congestion & sore throat</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Prevention Tips</h3>
+                <ul>
+                    <li>Annual Flu Vaccination</li>
+                    <li>Frequent Hand Sanitization</li>
+                    <li>Respiratory Etiquette (Cover coughs)</li>
+                    <li>Disinfect Common Surfaces</li>
+                    <li>Avoid Contact with Infected Persons</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Recommended Treatment</h3>
+        <p>Most healthy individuals recover with <strong>rest, hydration, and over-the-counter fever reducers</strong>. However, for high-risk groups, doctors may prescribe antiviral medications like <em>Oseltamivir (Tamiflu)</em> to reduce the severity and duration of the illness.</p>
+
+        <h3>Emergency Signs</h3>
+        <p style="background: #fff5f5; padding: 15px; border-radius: 10px; border-left: 5px solid #ff4d4d;">
+            <strong>Seek immediate medical care if you experience:</strong> Difficulty breathing, persistent chest pain, sudden confusion, or a fever that returns with a worse cough.
+        </p>
+
+        <div class="doctor-card">
+            <img src="f1.png" alt="Dr. David A. Relman" class="doctor-img">
+            <h3>Dr. David A. Relman</h3>
+            <p style="font-weight: 600; color: var(--primary);">Infectious Disease Specialist</p>
+            
+            <p>Dr. David A. Relman is a world-renowned expert in microbiology and infectious diseases. He is a Professor at Stanford University and an elected member of the National Academy of Medicine.</p>
+
+            <div style="text-align: left; width: 100%; max-width: 600px;">
+                <h4 style="color: #004085; margin-bottom: 10px;">Key Contributions:</h4>
+                <ul>
+                    <li><strong>Pathogen Discovery:</strong> Pioneer in identifying new infectious agents.</li>
+                    <li><strong>Microbiome Research:</strong> Expert in human gut & oral bacterial ecology.</li>
+                    <li><strong>Public Health:</strong> Served as Senior Advisor on biosecurity and pandemic response.</li>
+                    <li><strong>Education:</strong> M.D. from Harvard Medical School.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

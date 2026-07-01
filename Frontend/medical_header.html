@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Specialties | Majestic Hospital</title>
+    <style>
+        :root {
+            --primary: #007bff;
+            --secondary: #2c3e50;
+            --medical-blue: #0056b3;
+            --bg-light: #f8fafc;
+            --text-dark: #334155;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Professional Header --- */
+        .header {
+            background: white;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .header-title {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Back to Home Button */
+        .btn-back {
+            text-decoration: none;
+            background: var(--secondary);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #000;
+            transform: translateX(-5px);
+        }
+
+        /* --- Main Content --- */
+        .main-wrapper {
+            margin-top: 120px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-intro h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        /* --- Info Sections Layout --- */
+        .specialty-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .specialty-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .info-text {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .info-text h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        .info-img-wrapper {
+            flex: 0 0 40%;
+        }
+
+        .info-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Lists --- */
+        ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 25px;
+        }
+
+        ul li::before {
+            content: "🔹";
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #1a2a3a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 850px) {
+            .specialty-card, .specialty-card:nth-child(even) {
+                flex-direction: column;
+            }
+            .info-img-wrapper {
+                height: 250px;
+            }
+            .section-intro h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-title">Majestic Medical Portal</div>
+        <a href="final project1.html" class="btn-back">← Back to Home</a>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="section-intro">
+            <h1>Specialized Departments</h1>
+            <p>Comprehensive healthcare solutions delivered with excellence and compassion.</p>
+        </div>
+
+        <div class="specialty-card" style="background: #f0f7ff; border-left: 8px solid var(--medical-blue);">
+            <div class="info-text">
+                <h2>Clinics</h2>
+                <p>Majestic Hospital has been striving to create milestones of recovery stories since inception. We have been restoring hope and health while being recognized for sheer dedication, precision, excellence, and selfless service.</p>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="clinic.jpg" alt="Clinic">
+            </div>
+        </div>
+
+        <div class="specialty-card">
+            <div class="info-text">
+                <h2>Dental Care</h2>
+                <p>Department of Dental Sciences offers advanced dental care for all ages, including cosmetic dentistry, implants, and orthodontics.</p>
+                <h3>DENTAL IMPLANTS</h3>
+                <p>Dental implants replace missing roots and support artificial teeth, providing a natural look and comfortable fit.</p>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="dental.jpeg" alt="Dental Care">
+            </div>
+        </div>
+
+        <div class="specialty-card">
+            <div class="info-text">
+                <h2>Comprehensive Liver Care</h2>
+                <p>The liver performs over 500 vital functions to ensure body health. Our expert team manages all aspects of liver health.</p>
+                <ul>
+                    <li><strong>Detoxification:</strong> Cleansing blood and removing toxins.</li>
+                    <li><strong>Metabolism:</strong> Processing fats, proteins, and carbs.</li>
+                    <li><strong>Bile Production:</strong> Essential for fat digestion.</li>
+                    <li><strong>Immune Function:</strong> Neutralizing harmful bacteria.</li>
+                </ul>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="liver.jpg" alt="Liver Care">
+            </div>
+        </div>
+
+        
+
+        <div class="specialty-card">
+            <div class="info-text">
+                <h2>Department of Pediatrics</h2>
+                <p>We provide high-quality medical care for children, focusing on their physical, emotional, and developmental well-being from infancy through adolescence.</p>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="Pediatrics.jpg" alt="Pediatrics">
+            </div>
+        </div>
+
+        <div class="specialty-card">
+            <div class="info-text">
+                <h2>Comprehensive Cancer Care</h2>
+                <p>Equipped with state-of-the-art PET CT and Western India's largest Bone Marrow Transplant units, we offer expert oncology services.</p>
+                <p><strong>Advanced Modalities:</strong> 3D Mammography, Robotic Surgery, and Targeted Radiation Therapy.</p>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="cancer.jpg" alt="Cancer Care">
+            </div>
+        </div>
+
+        <div class="specialty-card">
+            <div class="info-text">
+                <h2>Department of Dermatology</h2>
+                <p>Focusing on skin, hair, and nails, we combine medical science with aesthetic enhancements using minimally invasive techniques.</p>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="Dermatology.jpg" alt="Dermatology">
+            </div>
+        </div>
+
+        <div class="specialty-card">
+            <div class="info-text">
+                <h2>Nephrology & Urology</h2>
+                <p>Specialized care for kidney disorders, electrolyte balance, and urinary tract health including prostate and renal stone management.</p>
+            </div>
+            <div class="info-img-wrapper">
+                <img src="Department of Nephrology & Urology.jpeg" alt="Nephrology">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Majestic Hospital. Providing Quality Healthcare Excellence.</p>
+        <p style="font-size: 12px;">All rights reserved | Privacy Policy</p>
+    </footer>
+
+</body>
+</html>

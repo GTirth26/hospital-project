@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration | Majestic Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .registration-card {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 800px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: var(--primary);
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        form { padding: 40px; }
+        .form-section { margin-bottom: 30px; }
+        .section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .grid-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .full-width { grid-column: span 2; }
+
+        label { font-size: 0.875rem; font-weight: 500; color: #475569; }
+        input, select, textarea {
+            font-family: inherit; font-size: 0.95rem; padding: 12px 16px;
+            border: 1.5px solid var(--border-color); border-radius: 8px;
+            background: #fcfcfd;
+        }
+
+        #qr-section {
+            display: none; text-align: center; padding: 20px; border: 2px dashed var(--primary);
+            border-radius: 12px; margin-top: 10px; background: #eff6ff;
+        }
+
+        .btn-submit {
+            background: var(--primary); color: white; border: none; padding: 16px;
+            border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer;
+            width: 100%; transition: 0.2s; margin-top: 20px;
+        }
+
+        .btn-submit:hover { background: var(--primary-hover); transform: translateY(-2px); }
+        .required::after { content: " *"; color: #ef4444; }
+    </style>
+  <script>
+    if (window.location.protocol === 'file:') {
+      alert("STOP! You cannot open this file directly. Click OK to be redirected to localhost.");
+      window.location.href = "http://localhost/hospital/hospital/Frontend/a1.html";
+    }
+  </script>
+</head>
+<body>
+
+    <div class="registration-card">
+        <div class="card-header">
+            <h2>Majestic Hospital</h2>
+            <p>Complete your registration to get an appointment</p>
+        </div>
+
+        <form id="registrationForm">
+            <div class="form-section">
+                <div class="section-title">Personal Details</div>
+                <div class="grid-layout">
+                    <div class="form-group full-width">
+                        <label for="name" class="required">Full Legal Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="person" class="required">Registering As</label>
+                        <select id="person" name="person" required>
+                            <option value="patient">Patient</option>
+                            <option value="guardian">Guardian</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="required">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" maxlength="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" class="required">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="required">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">Appointment Slot</div>
+                <div class="grid-layout">
+                    <div class="form-group full-width">
+                        <label class="required">Address</label>
+                        <textarea name="address" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Preferred Day</label>
+                        <select name="appointment-day" required>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Preferred Time</label>
+                        <input type="time" name="appointment-time" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Medical History</label>
+                        <textarea name="medical-history"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">Payment</div>
+                <div class="grid-layout">
+                    <div class="form-group full-width">
+                        <label class="required">Payment Mode</label>
+                        <select id="payment_method" name="payment_method" onchange="toggleQR(this.value)" required>
+                            <option value="" disabled selected>Select Payment</option>
+                            <option value="QR Code">QR Code Scan</option>
+                            <option value="Cash">Cash on Hand</option>
+                            <option value="Online">Online Payment</option>
+                        </select>
+                    </div>
+
+                    <div id="qr-section" class="full-width">
+                        <p><strong>Scan QR to pay ₹500 Fees</strong></p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=hospital@upi&pn=Majestic" alt="QR">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Confirm & Get Receipt</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleQR(val) {
+            document.getElementById('qr-section').style.display = (val === 'QR Code') ? 'block' : 'none';
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.disabled = true;
+            btn.innerHTML = 'Processing...';
+
+            const formData = new FormData(this);
+
+            fetch('../backend/register.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.text())
+            .then(data => {
+                if (data.trim() === "success") {
+                    const n = document.getElementById('name').value;
+                    const p = document.getElementById('phone').value;
+                    // Redirection to receipt.php
+                    window.location.href = "../backend/receipt.php?name=" + encodeURIComponent(n) + "&phone=" + encodeURIComponent(p);
+                } else {
+                    alert("Error: " + data);
+                    btn.disabled = false;
+                    btn.innerHTML = 'Confirm & Get Receipt';
+                }
+            })
+            .catch(err => {
+                alert("Network error! Make sure you are using http://localhost/... and XAMPP Apache is running.");
+                btn.disabled = false;
+                btn.innerHTML = 'Confirm & Get Receipt';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Majestic Hospital</title>
+    <style>
+        :root {
+            --primary: #007bff;
+            --secondary: #2c3e50;
+            --bg: #f8fafc;
+            --text: #334155;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* --- Header matching your project --- */
+        .header {
+            background: white;
+            padding: 15px 6%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        /* --- Hero Section --- */
+        .about-hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(0,123,255,0.8), rgba(0,123,255,0.8)), url('hospital-bg.jpg');
+            background-size: cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        /* --- 1. Our Legacy Section --- */
+        .section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .section-text { flex: 1; }
+        .section-img { flex: 1; }
+        .section-img img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
+
+        /* --- 2. Stats Counter (Hospital Strength) --- */
+        .stats-bar {
+            background: white;
+            padding: 50px 0;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-item h2 { color: var(--primary); font-size: 2.5rem; margin: 0; }
+        .stat-item p { font-weight: bold; color: var(--secondary); }
+
+        /* --- 3. Clinical Excellence (Vision/Mission cards) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+        }
+
+        /* --- 4. Certifications Section --- */
+        .accreditations {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f1f5f9;
+        }
+
+        .cert-logos {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+
+        footer { background: var(--secondary); color: white; text-align: center; padding: 40px 0; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <strong style="color:var(--primary); font-size: 20px;">MAJESTIC HOSPITAL</strong>
+        <a href="final project1.html" class="btn-back">Back to Home</a>
+    </header>
+
+    <div class="about-hero">
+        <h1>Over 25 Years of Healing & Hope</h1>
+        <p>Your Trusted Healthcare Partner in Western India</p>
+    </div>
+
+    <div class="section">
+        <div class="section-text">
+            <h2>Our Journey</h2>
+            <p>Founded in 2000, Majestic Hospital started with a simple vision: to provide affordable, world-class healthcare to everyone. What began as a small clinic has now evolved into a multi-specialty healthcare hub with cutting-edge technology and a team of globally renowned doctors.</p>
+            <p>We take pride in our 98% patient satisfaction rate and our commitment to ethical medical practices.</p>
+        </div>
+        <div class="section-img">
+            <img src="hospital-building.jpg" alt="Our Hospital Building">
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h2>500+</h2>
+            <p>Expert Doctors</p>
+        </div>
+        <div class="stat-item">
+            <h2>1 Lakh+</h2>
+            <p>Happy Patients</p>
+        </div>
+        <div class="stat-item">
+            <h2>24/7</h2>
+            <p>Emergency Care</p>
+        </div>
+        <div class="stat-item">
+            <h2>50+</h2>
+            <p>Specialties</p>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="info-card">
+            <h3>Our Vision</h3>
+            <p>To be the global leader in patient-centric healthcare, driven by innovation, research, and a compassionate spirit that touches every life we serve.</p>
+        </div>
+        <div class="info-card">
+            <h3>Our Mission</h3>
+            <p>To deliver high-quality, advanced medical care through a combination of state-of-the-art technology and the best medical minds in the country.</p>
+        </div>
+    </div>
+
+    <div class="accreditations">
+        <h2>Accreditations & Awards</h2>
+        <p>We are recognized by leading global and national healthcare bodies.</p>
+        <div class="cert-logos">
+            <span><strong>NABH</strong> Accredited</span>
+            <span><strong>JCI</strong> Standard</span>
+            <span><strong>NABL</strong> Certified Lab</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Majestic Hospital | Excellence in Healthcare</p>
+    </footer>
+
+</body>
+</html>

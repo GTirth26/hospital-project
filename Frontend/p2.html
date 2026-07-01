@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Website</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: aqua;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            height: 500px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            display: none;
+            border-radius: 10px;
+        }
+
+        .slider img.active {
+            display: block;
+        }
+
+        /* Dots */
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 5px;
+            background-color: gray;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background-color: white;
+        }
+
+        /* Product Section */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header"> 
+        <h1>Doctor Website</h1>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="H1.jpg" class="active" alt="Image 1">
+            <img src="H2.webp" alt="Image 2">
+            <img src="H3.jpg" alt="Image 3">
+        </div>
+        <div class="dots"></div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container">
+        <div class="box">
+            <h1>Snooz</h1>
+            <img src="H1.jpg" alt="Snooz">
+            <button>Details</button>
+            <button>Appointment</button>
+        </div>
+
+        <div class="box">
+            <h1>Snooz</h1>
+            <img src="H2.webp" alt="Snooz">
+            <button>Details</button>
+            <button>Appointment</button>
+        </div>
+
+        <div class="box">
+            <h1>Snooz</h1>
+            <img src="H3.jpg" alt="Snooz">
+            <button>Details</button>
+            <button>Appointment</button>
+        </div>
+
+        <div class="box">
+            <h1>Snooz</h1>
+            <img src="H1.jpg" alt="Snooz">
+            <button>Details</button>
+            <button>Appointment</button>
+        </div>
+
+        <div class="box">
+            <h1>Snooz</h1>
+            <img src="H2.webp" alt="Snooz">
+            <button>Details</button>
+            <button>Appointment</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll(".slider img");
+        const dotsContainer = document.querySelector(".dots");
+
+        // Create dots dynamically
+        images.forEach((_, index) => {
+            let dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.setAttribute("onclick", `currentSlide(${index})`);
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        function changeSlide(index) {
+            images[currentIndex].classList.remove("active");
+            dots[currentIndex].classList.remove("active");
+
+            currentIndex = index;
+
+            images[currentIndex].classList.add("active");
+            dots[currentIndex].classList.add("active");
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentIndex + 1) % images.length;
+            changeSlide(nextIndex);
+        }
+
+        function currentSlide(index) {
+            changeSlide(index);
+        }
+
+        // Auto change slides every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>
